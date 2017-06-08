@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            background: #ccc;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-left: 100px;
+            margin-top: 100px;
+            border-radius: 50%;
+            border: 10px solid #eee;
+            transform: rotate(-45deg);
+            transition: all 1s ease 0s;
+        }
+        
+        .box:hover {
+            transform: rotate(315deg);
+        }
+        
+        .box:nth-child(1) {
+            border-top-color: yellow;
+        }
+        
+        .box:nth-child(2) {
+            border-right-color: pink;
+        }
+        
+        .box:nth-child(3) {
+            border-bottom-color: greenyellow;
+        }
+        
+        .box:nth-child(4) {
+            border-left-color: lightblue;
+        }
+        
+        .boxIn {
+            width: 180px;
+            height: 180px;
+            margin-left: 10px;
+            margin-top: 10px;
+            border-radius: 50%;
+        }
+        
+        .box:nth-child(1) .boxIn {
+            background: greenyellow;
+        }
+        
+        .box:nth-child(2) .boxIn {
+            background: orange;
+        }
+        
+        .box:nth-child(3) .boxIn {
+            background: blue;
+        }
+        
+        .box:nth-child(4) .boxIn {
+            background: indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxIn"></div>
+    </div>
+    <div class="box">
+        <div class="boxIn"></div>
+    </div>
+    <div class="box">
+        <div class="boxIn"></div>
+    </div>
+    <div class="box">
+        <div class="boxIn"></div>
+    </div>
+</body>
+
+</html>

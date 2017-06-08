@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 800px;
+            height: 300px;
+            margin: 100px auto;
+            perspective: 800px;
+            position: relative;
+        }
+        
+        li img {
+            width: 400px;
+            height: 200px;
+            border: 3px solid orange;
+        }
+        
+        .center {
+            z-index: 800;
+            transform: none;
+        }
+        
+        .left1 {
+            z-index: 600;
+            transform: rotateY(30deg) translateX(-100px) translateZ(-200px)
+        }
+        
+        .left2 {
+            z-index: 500;
+            transform: rotateY(30deg) translateX(-200px) translateZ(-300px)
+        }
+        
+        .left3 {
+            z-index: 500;
+            transform: rotateY(30deg) translateX(-300px) translateZ(-400px)
+        }
+        
+        .left4 {
+            z-index: 500;
+            transform: rotateY(30deg) translateX(-400px) translateZ(-500px)
+        }
+        
+        .right1 {
+            z-index: 600;
+            transform: rotateY(-30deg) translateX(100px) translateZ(-200px)
+        }
+        
+        .right2 {
+            z-index: 560;
+            transform: rotateY(-30deg) translateX(200px) translateZ(-300px)
+        }
+        
+        .right3 {
+            z-index: 550;
+            transform: rotateY(-30deg) translateX(300px) translateZ(-400px)
+        }
+        
+        .right4 {
+            z-index: 500;
+            transform: rotateY(-30deg) translateX(400px) translateZ(-500px)
+        }
+        
+        li {
+            position: absolute;
+            top: 50px;
+            left: 150px;
+            list-style: none;
+            transition: all 1s ease 0s;
+        }
+        
+        input {
+            position: absolute;
+            bottom: 0;
+        }
+        
+        #bt1 {
+            left: 0;
+        }
+        
+        #bt2 {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="left2"><img src="1.jpg" alt=""></li>
+            <li class="left1"><img src="2.jpg" alt=""></li>
+            <li class="center"><img src="3.jpg" alt=""></li>
+            <li class="right1"><img src="4.jpg" alt=""></li>
+            <li class="right2"><img src="5.jpg" alt=""></li>
+
+
+        </ul>
+        <input id="bt1" type="button" value="上一张"></input>
+        <input id="bt2" type="button" value="下一张"></input>
+    </div>
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    var arr = ['left4', 'left3', 'left2', 'left1', 'center', 'right1', 'right2', 'right3', 'right4'];
+    var adx = 2;
+    $('#bt1').click(function() {
+        adx--;
+        if (adx < 0) {
+            adx = 0;
+            return;
+        }
+        Class(adx)
+    })
+    $('#bt2').click(function() {
+        adx++;
+        if (adx > 4) {
+            adx = 4;
+            return;
+        }
+        Class(adx)
+    })
+
+    function Class(adx) {
+        var arrClass = arr.slice(adx, adx + 5);
+        $.each($('li'), function(i) {
+            $(this).attr('class', arrClass[i]);
+        })
+    }
+</script>
+
+</html>

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html{
+				background: #CCCCCC;
+			}
+		.boxout{
+			width: 100%;
+			height: 200px;
+            perspective: 1000px;
+			
+
+		}
+		.box{
+		 width:140px;
+		 height:200px;
+		 transform-style:preserve-3d;
+
+		 position:relative;
+		 margin:200px auto;
+		 }
+        .box span{
+        width:140px; 
+        height:200px; 
+        position: absolute;
+         
+        }
+        .s{
+        	width:140px; height:200px;
+            -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5) 100%);
+        }
+		</style>
+	</head>
+	<body>
+		<div class="boxout">
+		<div class="box">
+			<span><img class="s" src="1.jpg.jpg"/></span>
+			<span><img class="s" src="1306679385695wc3ut8ru6d_medium.jpg"/></span>
+			<span><img class="s" src="1307515619381o2v3xqypte.jpg"/></span>
+			<span><img class="s" src="20110823022702453.png"/></span>
+			<span><img class="s" src="20110829094921537.jpg"/></span>
+			<span><img class="s" src="20120515042036295.png"/></span>
+			<span><img class="s" src="2524281_zhangjiao.png"/></span>
+			<span><img class="s" src="2652884_3.jpg"/></span>
+			<span><img class="s" src="b80c916da2e38c34-98ced589622273a2-ec5f8b1cf8496dd5f395d23c991cf8d7.jpg"/></span>
+			<span><img class="s" src="13680821098316b07e.jpg"/></span>
+			<span><img class="s" src="60-121229104P6.jpg"/></span>
+			<span><img class="s" src="y0503aixxx13s.jpg"/></span>
+        </div>
+        </div>
+	</body>
+  
+	
+	<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jq.mousewheel.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var span = document.getElementsByTagName('span');
+		window.onload =function(){
+		for (var i = 0; i < span.length; i++) {
+			span[i].style.WebkitTransition='1s all ease '+(span.length-i)*.1+'s';
+			
+			span[i].style.webkitTransform = "rotateY("+i*360/span.length+"deg) translateZ(500px)"
+		}
+			}
+
+
+    var degree = 0;
+    var lock = true;
+
+    $(document).mousewheel(function(ev, delta) {
+
+        // 函数节流
+        if (!lock) return;
+
+        degree -= delta * 30;
+        $('.box').css('transform', 'rotateY(' + degree + 'deg)')
+        console.log(delta)
+        lock = false;
+
+        setTimeout(function() {
+            lock = true;
+        }, 1000)
+
+    })
+	</script>
+</html>

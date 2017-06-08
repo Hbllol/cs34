@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+	html{
+		overflow: hidden;
+	}
+    .box {
+        width: 1000px;
+        height: 500px;
+        margin: 100px auto;
+        perspective: 800px;
+        position: relative;
+        
+    }
+    
+    #content {
+        list-style: none;
+    }
+    
+    #content li {
+        position: absolute;
+        width: 1000px;
+        height: 500px;
+    }
+    
+    #point {
+        width: 20px;
+        height: 200px;
+        position: absolute;
+        right: -100px;
+        top: 50%;
+        margin-top: -100px;
+        list-style: none;
+    }
+    
+    #point li {
+        width: 12px;
+        height: 12px;
+        background: lightskyblue;
+        border-radius: 50%;
+        margin-top: 30px;
+    }
+    
+    .show4,
+    .show2,
+    .show3 {
+        display: none;
+    }
+    
+    .lbox {
+        width: 240px;
+        height: 150px;
+        margin-left: 100px;
+        margin-top: 200px;
+        background: url(121.png);
+    }
+    
+    .lbox-small {
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 65px;
+        background: url(121.png) no-repeat 10px -150px;
+        animation: small 3s linear infinite;
+        /*opacity: 0;*/
+    }
+    
+    @-webkit-keyframes small {
+        from {
+            left: 0px;
+            top: -100px;
+            opacity: 1;
+            transform: rotate(0deg)
+        }
+        to {
+            left: 300px;
+            top: 400px;
+            opacity: 0.2;
+            transform: rotate(50deg)
+        }
+    }
+    /*第一页*/
+    
+    .show2-box {
+        width: 235px;
+        height: 200px;
+        position: absolute;
+        right: 100px;
+        top: 50%;
+        margin-top: -100px;
+    }
+    
+    .show2-box1 {
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        background: url(121.png) no-repeat 0 -311px;
+        bottom: 0;
+        left: 0;
+        z-index: 40;
+        animation: z3 3s linear infinite;
+    }
+    
+    .show2-box2 {
+        position: absolute;
+        width: 96px;
+        height: 96px;
+        background: url(121.png) no-repeat 0 -215px;
+        bottom: 0;
+        right: 0;
+        z-index: 50;
+        animation: z1 3s infinite;
+    }
+    
+    .show2-box3 {
+        position: absolute;
+        width: 136px;
+        height: 136px;
+        background: url(121.png) no-repeat 0 -482px;
+        bottom: 30px;
+        right: 0;
+        z-index: 30;
+        animation: z2 3s linear infinite;
+    }
+    
+    @keyframes z1 {
+        0% {
+            transform: rotate(0deg);
+        }
+        33% {
+            transform: rotate(360deg);
+            transform-origin: (50% 50%);
+        }
+        66% {
+            transform: rotate(360deg);
+            transform-origin: (50% 50%);
+        }
+        100% {
+            transform: rotate(360deg);
+            transform-origin: (50% 50%);
+        }
+    }
+    
+    @keyframes z2 {
+        33% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+            transform-origin: (50% 50%);
+        }
+    }
+    
+    @keyframes z3 {
+        66% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+            transform-origin: (50% 50%);
+        }
+    }
+    /*第二页*/
+    
+    .show3-box {
+        width: 191px;
+        height: 267px;
+        position: absolute;
+        left: 100px;
+        top: 50%;
+        margin-top: -133px;
+        background: url(121.png) no-repeat 0 -620px;
+    }
+    
+    .show3-boxg {
+        width: 341px;
+        height: 256px;
+        position: absolute;
+        left: -75px;
+        top: -70px;
+        background: url(121.png) no-repeat 0 -887px;
+        animation: g 1s linear alternate infinite;
+    }
+    
+    @keyframes g {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    /*第三页*/
+    
+    .show4-box {
+        width: 225px;
+        height: 220px;
+        position: absolute;
+        right: 200px;
+        top: 100px;
+        background: url(121.png) no-repeat -239px 0;
+        animation: hj 0.2s linear alternate infinite;
+    }
+    
+    .lear1 {
+        position: absolute;
+        width: 156px;
+        height: 153px;
+        left: -50px;
+        background: url(121.png) no-repeat -239px -220px;
+        animation: l1 0.3s linear infinite;
+    }
+    
+    .lear2 {
+        position: absolute;
+        width: 75px;
+        height: 73px;
+        left: 65px;
+        background: url(121.png) no-repeat -165px -150px;
+        animation: l1 0.4s linear infinite;
+    }
+    
+    .lear3 {
+        position: absolute;
+        width: 156px;
+        height: 153px;
+        left: 210px;
+        background: url(121.png) no-repeat -239px -373px;
+        animation: l1 0.5s linear infinite;
+    }
+    
+    .lear4 {
+        position: absolute;
+        width: 94px;
+        height: 93px;
+        left: 220px;
+        background: url(121.png) no-repeat -395px -220px;
+        animation: l1 0.6s linear infinite;
+    }
+    
+    @keyframes hj {
+        from {
+            right: 210px;
+            top: 110px;
+        }
+        to {
+            right: 220px;
+            top: 100px;
+        }
+    }
+    
+    @keyframes l1 {
+        from {
+            transform: translate(200px, -200px);
+            opacity: 0.8
+        }
+        to {
+            transform: translate(-200px, 200px);
+            opacity: 0.2
+        }
+    }
+    
+    @keyframes dd {
+        from {
+            opacity: 0.8
+        }
+        to {
+            opacity: 0.2
+        }
+    }
+    
+    .z1 {
+        position: absolute;
+        width: 530px;
+        height: 128px;
+        right: 80px;
+        top: 220px;
+    }
+    
+    .z2 {
+        width: 380px;
+        height: 180px;
+        margin-left: 50px;
+        margin-top: 180px;
+    }
+    
+    .z3 {
+        width: 325px;
+        height: 155px;
+        margin-left: 550px;
+        margin-top: 180px;
+    }
+    
+    .z4 {
+        width: 325px;
+        height: 155px;
+        margin-left: 50px;
+        margin-top: 180px;
+    }
+    
+    
+    /*换页动态*/
+   .show1{
+   	animation: s1 0.5s linear;
+   }
+   .show2{
+   	animation: s2 0.5s linear;
+   }
+   .show3{
+   	animation: s3 0.5s linear;
+   }
+   .show4{
+   	animation: s4 1s linear;
+   }
+
+   @keyframes s1{
+   	from{transform:rotateY(50deg) rotateX(40deg) translateZ(1200px);
+   	}
+   	to{transform: none; }
+   }
+   @keyframes s2{
+   	from{transform: rotateX(90deg) translateZ(1200px);
+   	}
+   	to{transform: none; }
+   }
+   @keyframes s3{
+   	from{transform:rotateY(20deg)translateX(-1000px) translateZ(1200px);transform-origin:(100% 100%);
+   	}
+   	to{transform: none; }
+   }
+   @keyframes s4{
+   	from{transform:rotateY(100deg) rotateX(40deg) translateZ(500px);transform-origin:(0% 100%) ;
+   	}
+   	to{transform: none; }
+   }
+</style>
+
+<body>
+    <div class="box">
+        <ul id="content">
+            <li class="show1">
+                <div class="lbox"></div>
+                <div class="lbox-small"></div>
+                <div class="z1"><img src="z1.png" alt=""></div>
+            </li>
+            <li class="show2">
+                <div class="show2-box">
+                    <div class="show2-box1"></div>
+                    <div class="show2-box2"></div>
+                    <div class="show2-box3"></div>
+
+                </div>
+                <div class="z2"><img src="z2.png" alt=""></div>
+
+            </li>
+            <li class="show3">
+                <div class="show3-box">
+                    <div class="show3-boxg"></div>
+
+                </div>
+                <div class="z3"><img src="z3.png" alt=""></div>
+
+            </li>
+            <li class="show4">
+                <div class="z4"><img src="z4.png" alt=""></div>
+
+                <div class="show4-box">
+                    <div class="lear1"></div>
+                    <div class="lear2"></div>
+                    <div class="lear3"></div>
+                    <div class="lear4"></div>
+                </div>
+
+            </li>
+        </ul>
+        <ul id="point">
+            <li style="background: blue;"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script src="jq.mousewheel.js"></script>
+
+<script>
+    var degree = 0;
+    var lock = true;
+
+    $(".box").mousewheel(function(ev, delta) {
+
+        // 函数节流
+        if (!lock) return;
+
+        degree -= delta;
+
+        $('#content li').eq(degree).show().siblings().hide();
+
+        $('#point li').eq(degree).css({
+            'background': 'blue',
+
+        }).siblings().css({
+            'background': '',
+
+        })
+
+        console.log(delta)
+        lock = false;
+
+        setTimeout(function() {
+            lock = true;
+        }, 1000)
+
+    })
+</script>
+
+</html>
